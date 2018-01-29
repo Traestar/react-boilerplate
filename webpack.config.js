@@ -1,5 +1,5 @@
-let path = require('path');
-let nodeExternals = require('webpack-node-externals');
+const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const moduleObj = {
@@ -7,7 +7,7 @@ const moduleObj = {
         {
             test: /\.js$/,
             exclude: /node_modules/,
-            loaders: ["babel-loader"],
+            loaders: ['babel-loader'],
         }
     ],
 };
@@ -23,11 +23,11 @@ const client = {
     },
     module: moduleObj,
     plugins: [
-    new HtmlWebPackPlugin({
-      template: 'src/client/index.html'
-    })
-  ]
-};
+        new HtmlWebPackPlugin({
+            template: 'src/client/index.html'
+            })
+        ]
+    };
 
 const server = {
     entry: {
@@ -42,4 +42,4 @@ const server = {
     externals: [nodeExternals()]
 }
     
-module.exports = [client, server];
+module.exports = [client, server]
